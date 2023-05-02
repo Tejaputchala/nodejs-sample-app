@@ -1,5 +1,5 @@
 FROM node:18-alpine
-ENV DOMAIN="http://<jenkins server public ip>:8000" \
+ENV DOMAIN="http://<jenkins server public ip>:3000" \
 PORT=3000 \
 STATIC_DIR="./client" \
 PUBLISHABLE_KEY="pk_test_51L5AsSSCC8JVWfvgEtfJkzHMTh7Z5PLY5m1yhR379sJgwAVZEe13NaiG33wsHSyHnPJMjTNOosiPk6AeMI8q0ims0049IKffiu"\
@@ -8,5 +8,5 @@ WORKDIR /usr/src/app/
 COPY package*.json ./
 RUN npm install
 COPY . .
-EXPOSE 8000
+EXPOSE 3000
 CMD ["node", "server.js"]
